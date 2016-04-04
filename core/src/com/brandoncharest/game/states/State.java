@@ -10,6 +10,7 @@ import com.badlogic.gdx.math.Vector3;
 public abstract class State {
 
     protected OrthographicCamera camera;
+    /*Vector3 uses X,Y,Z*/
     protected Vector3 mouse;
     protected GameStateManager gsm;
 

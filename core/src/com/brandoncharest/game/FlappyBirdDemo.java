@@ -9,6 +9,7 @@ import com.brandoncharest.game.states.GameStateManager;
 import com.brandoncharest.game.states.MenuState;
 
 public class FlappyBirdDemo extends ApplicationAdapter {
+	/*Sets game screen width and height*/
 	public static final int WIDTH = 480;
 	public static final int HEIGHT=800;
 
@@ -20,6 +21,7 @@ public class FlappyBirdDemo extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		gsm = new GameStateManager();
+		/*glClear?, I believe it wipes screen fresh.*/
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		gsm.push(new MenuState(gsm));
 	}
