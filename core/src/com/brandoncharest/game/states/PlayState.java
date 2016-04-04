@@ -54,6 +54,10 @@ public class PlayState extends State {
             if(camera.position.x - (camera.viewportWidth / 2) > tube.getPosTopTube().x +tube.getTopTube().getWidth()){
                 tube.Reposition(tube.getPosTopTube().x + ((Tube.TUBE_WIDTH + TUBE_SPACING) * TUBE_COUNT));
             }
+            /*if player hits a tube game restarts*/
+            if(tube.collides(bird.getBounds())){
+                gsm.set(new PlayState(gsm));
+            }
         }
 
         camera.update();
@@ -77,6 +81,7 @@ public class PlayState extends State {
 
     @Override
     public void dispose() {
+
         //dispose used to prevent any sort of memory leak
     }
 }
