@@ -12,9 +12,11 @@ import java.util.Random;
  */
 public class Tube {
     /*allows for the position of tubes to move vertically 130px.*/
-    private static final int FLUCTUATION = 130;
+    private static final int FLUCTUATION = 200;
+
     /*the distance between the tubes will be 100px*/
     private static final int TUBE_GAP = 100;
+
     /*lowest possible position for top tube 120px*/
     private static final int LOWEST_OPENING =120;
     public static final int TUBE_WIDTH = 52;
@@ -65,6 +67,11 @@ public class Tube {
     public boolean collides(Rectangle player){
         /*checks to see if player as encountered a tube*/
         return player.overlaps(boundsTop) || player.overlaps(boundsBot);
+    }
+
+    public void dispose(){
+        topTube.dispose();
+        bottomTube.dispose();
     }
 
 }
