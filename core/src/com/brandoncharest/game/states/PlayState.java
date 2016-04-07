@@ -31,8 +31,10 @@ public class PlayState extends State {
         background = new Texture("bg.png");
         ground = new Texture("ground.png");
         bird = new Bird(50, 300);
+
         groundPos1 = new Vector2(camera.position.x - camera.viewportWidth / 2, GROUND_Y_OFFSET);
         groundPos2 = new Vector2((camera.position.x - camera.viewportWidth / 2) + ground.getWidth(), GROUND_Y_OFFSET);
+
         camera.setToOrtho(false, FlappyBirdDemo.WIDTH / 2, FlappyBirdDemo.HEIGHT / 2);
 
         tubes = new Array<Tube>();
@@ -73,10 +75,11 @@ public class PlayState extends State {
         camera.update();
     }
 
+    /*SpriteBatch must first be "opened" with begin then have its textures added
+     * After all textures are added SpriteBach must be "closed" with end*/
     @Override
     public void render(SpriteBatch sb) {
-        /*SpriteBatch must first be "opened" with begin then have its textures added
-        * After all textures are added SpriteBach must be "closed" with end*/
+       /*Projection Matrix coordinates on game screen in game world*/
         sb.setProjectionMatrix(camera.combined);
         sb.begin();
         /*Background fixed on to game camera viewport*/
