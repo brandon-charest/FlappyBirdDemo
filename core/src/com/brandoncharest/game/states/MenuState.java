@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.brandoncharest.game.FlappyBirdDemo;
 
+
 /**
  * Created by Brandon on 4/2/2016.
  */
@@ -18,6 +19,7 @@ public class MenuState extends State {
         camera.setToOrtho(false, FlappyBirdDemo.WIDTH / 2, FlappyBirdDemo.HEIGHT / 2);
         background = new Texture("bg.png");
         playBtn = new Texture("playbtn.png");
+
     }
 
     @Override

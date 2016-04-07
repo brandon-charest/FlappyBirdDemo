@@ -66,11 +66,11 @@ public class PlayState extends State {
             }
             /*if player hits a tube game restarts*/
             if(tube.collides(bird.getBounds())){
-                gsm.set(new PlayState(gsm));
+                gsm.set(new GameOverState(gsm));
             }
         }
         if(bird.getPosition().y <= ground.getHeight() + GROUND_Y_OFFSET){
-            gsm.set(new PlayState(gsm));
+            gsm.set(new GameOverState(gsm));
         }
         camera.update();
     }
